@@ -1,0 +1,28 @@
+section: website mirror
+---
+section_id: website-mirror
+---
+color: primary
+---
+_template: layout.html
+---
+title: Running a mirror
+---
+subtitle: Thank you for wanting to mirror the Tor website. All of our mirrors are publicly listed on our mirrors page. We've included some sample commands and configuration below to make the initial setup and ongoing maintenance a minimal effort. The Tor website and distribution directory currently require roughly 30 GB of disk space, but this number can fluctuate. Expect space requirements of up to 50 GB.
+---
+cta: Grow your .onion
+---
+key: 4
+---
+html: onion-services.html
+---
+body:
+
+Configuring your System
+
+If you would like to run a mirror, it's as easy as these commands to download everything a mirror should share with the world:
+
+    rsync -aq --exclude dist --delete rsync://rsync.torproject.org/website-mirror/ /var/www/mirrors/torproject.org
+    rsync -aq --delete rsync://rsync.torproject.org/dist-mirror/ /var/www/mirrors/torproject.org/dist
+
+In order to assure we have reliable and up to date mirrors, please ensure your mirror does at least the following:
